@@ -179,6 +179,13 @@
             font-size: 14px;
         }
 
+        .report-date {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
         /* --- MOBILE MEDIA QUERIES (The Magic Part) --- */
         @media (max-width: 600px) {
             body {
@@ -294,6 +301,12 @@
                 pageDiv.className = 'student-page';
 
                 pageDiv.innerHTML = `<h2 class="student-name">Student: ${studentName}</h2>`;
+
+                // Add Date
+                const dateStr = new Date().toLocaleDateString();
+                pageDiv.innerHTML += `<div class="report-date">Date: ${dateStr}</div>`;
+
+                // Added Wrapper div for Responsive Scrolling
 
                 // Added Wrapper div for Responsive Scrolling
                 let tableHtml = `<div class="table-responsive"><table><thead><tr>`;
